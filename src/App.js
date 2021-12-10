@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+
 import './App.css';
 
+import Header from './components/header';
+import Carrusel from './components/carrusel';
+import TiendaHome from './components/TiendaHome';
+import Somos from './components/Somos';
+/** para funciones con parametros se pueden poner la etiqueta y en la etiqueta de inicio
+ * se agrega el nombre de la variable junto con su valor, siempre entre comillas 
+ */
 function App() {
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header></Header>
+      <Carrusel></Carrusel>
+      <TiendaHome></TiendaHome>
+      <Somos></Somos>
     </div>
   );
 }

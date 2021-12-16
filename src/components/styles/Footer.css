@@ -1,0 +1,26 @@
+
+footer{
+    align-items: center;
+    display: flex;
+    
+    font-family: 'Muli', sans-serif;
+    height: 300px;
+    width: 100%;
+    /* background-color: #F6E5FE; */
+    margin-right: 12px;
+    background-color: rgb(69, 55, 82);
+    
+    padding: 5%;
+    color: rgb(219, 216, 216);
+    text-decoration: none;
+    justify-content: center;
+    
+    display: flex;
+    border: 0;
+}
+footer div{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}

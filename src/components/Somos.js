@@ -15,21 +15,21 @@ import './styles/Somos.css'
 
 // import Swiper core and required modules
 import SwiperCore, {
-    EffectCube, Pagination, Autoplay
+    Pagination, Autoplay
 } from 'swiper';
 
 // install Swiper modules
-SwiperCore.use([Autoplay, EffectCube, Pagination]);
+SwiperCore.use([Autoplay, Pagination]);
 export default function Somos() {
     return (
         <div>
             <div className="somos">
-                <div className=" anuncios ">
+                <div className=" anuncios d-flex flex-column justify-content-center">
                     <div className="row d-flex  justify-content-around con">
 
                         <div className=" d-flex flex-column justify-content-center ">
-                           
-                            <p id="quienes ">Quienes somos:</p>
+                            
+                            <h2>Quienes somos:</h2>
                             <p>somos una empresa que ama a todo tipo de mascotas, comprometidos a darles el mejor trato
                                 posible
                                 junto con los mejores cuidados para tu compañero de aventuras,ven con nosotros y dales el
@@ -46,7 +46,7 @@ export default function Somos() {
                             "disableOnInteraction": false
                         }} pagination={{
                             "clickable": true
-                        }} navigation={true} className="mySwiper col-7 ">
+                        }} navigation={false} className="mySwiper col-7 ">
                             <SwiperSlide><img src='./img/collagehome3.png' alt='imagenes collage'></img></SwiperSlide>
                             <SwiperSlide><img src='./img/collagehome4.png' alt='imagenes collage'></img></SwiperSlide>
                             <SwiperSlide><img src='./img/collagehome8.png' alt='imagenes collage'></img></SwiperSlide>

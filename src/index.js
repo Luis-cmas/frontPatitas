@@ -3,11 +3,24 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {Provider } from "react-redux";//redux se utiliza para usar variables globales en la pagina
+import {createStore } from "redux";
+import reducer from "./reducers";
+
+const initialState = {
+    "usuario" : "",
+    "mascota" : "",
+    "empleado": "",
+    "sucursal": "",
+    "cita": "",
+    "producto": ""
+}
+const store = createStore(reducer,initialState);
 //es el encargado de crar la aplicacion
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 

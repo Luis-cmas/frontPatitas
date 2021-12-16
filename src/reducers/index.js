@@ -5,6 +5,11 @@ const reducer = (state, action) => {
                 ...state,//trae el objeto
                 usuario: action.payload,
             }
+            case "SET_USUARIO_ID":
+            return {
+                ...state,
+                id: action.payload,
+            }
         //aqui se gregan todos los casos que se necesiten de las variables    
         case "SET_EMPLEADO":
             return {

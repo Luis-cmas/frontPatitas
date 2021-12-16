@@ -9,6 +9,7 @@ import reducer from "./reducers";
 
 const initialState = {
     "usuario" : "",
+    "id":"",
     "mascota" : "",
     "empleado": "",
     "sucursal": "",

@@ -1,9 +1,45 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
-function SesionUsuario({usuario}) {
+import Axios from 'axios'
+import {Link} from 'react-router-dom'
+
+
+function SesionUsuario({ usuario, id }) {
+
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        (async () => {
+            Axios.get(`http://localhost:3001/mascota/${id}`)
+                .then((response) => {
+                    setData(response.data);
+                })
+        })()
+    }, [input])
+
     return (
-        <div>
-            <h1>Buenas noshes {usuario}</h1>
+        <div className='sesion'>
+            <div className='sesion__usuario'>
+                <img src="/perro.png" alt=" Imagen de Usuario" />
+                <ul>
+                    <li>Informacion de Usuario</li>
+                    <li>Mascotas</li>
+                    <li>Citas</li>
+                    <li></li>
+                </ul>
+            </div>
+            <div className='sesion__informacion'>
+                {data.map((item) => {
+                    return(
+                        <div key={item.Id_Mascota} className=''>
+                            <img src="/perro.png" alt="Mascotas" />
+                            <h3>{item.Nombre_Mascota}</h3>
+                            <span>{item.Especie_Mascota}</span>
+                            <button>Expediente</button>
+                        </div>
+                    )
+                })}
+            </div>
         </div>
     )
 }
@@ -13,6 +49,7 @@ function SesionUsuario({usuario}) {
 const mapStateToProps = state => {
     return {
         usuario: state.usuario,
+        id: state.id
     }
 }
 

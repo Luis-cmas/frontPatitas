@@ -5,14 +5,12 @@ import { connect } from 'react-redux'
 import { setUsuario } from '../actions'
 import Axios from "axios"
 import { useForm } from "react-hook-form"
+import { setId } from '../actions'
 //props,en este caso son setUsuario y usuario
 
-function Login({ setUsuario, usuario }) {
+function Login({ setUsuario, usuario,setId }) {
 
-    const [user, setUser] = useState('');
     const history = useNavigate();
-    const [pass, setPass] = useState('');
-    const [fail, setFail] = useState(false)
     const {
         register,
         handleSubmit,
@@ -27,6 +25,7 @@ function Login({ setUsuario, usuario }) {
                 .then((response) => {
                     console.log(response)
                     setUsuario(response.data[0].Nombre_Usuario);
+                    setId(response.data[0].Id_Usuario);
                     alert(response.data[0].Nombre_Usuario)
                     history('/');
                 })
@@ -97,6 +96,7 @@ function Login({ setUsuario, usuario }) {
 //trae la funcion para cambiar el valor de la variable
 const mapDispatchToProps = {
     setUsuario,
+    setId
 }
 //trae las variables globales
 const mapStateToProps = state => {

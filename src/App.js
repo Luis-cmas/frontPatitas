@@ -10,6 +10,7 @@ import Login from './components/Login';
 import CrearCuenta from './components/CrearCuenta';
 import Tienda from './components/Tienda';
 import SesionUsuario from './components/SesionUsuario';
+import RecuperacionPass from './components/RecuperacionPass';
 import {
   BrowserRouter as Router,
   Routes,
@@ -43,7 +44,10 @@ function App() {
             <CrearCuenta />
           </div>}
           />
-          <Route exact path="/Recuperacion_Contraseña" element={<Header />}
+          <Route exact path="/Recuperacion_Contrasena" element={<div>
+            <Header/>
+            <RecuperacionPass/>
+            </div>}
           />
           <Route exact path="/Busqueda" element={<Header />}
           />
@@ -79,7 +83,7 @@ function App() {
             <SesionUsuario/>
             </div>}
           />
-          
+
         </Routes>
       </>
 

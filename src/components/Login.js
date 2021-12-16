@@ -81,7 +81,7 @@ function Login({ setUsuario, usuario }) {
                             <input type="checkbox" name="" id="cbox1" valuse="checkbox" /> Recuerdame
                         </label>
                         <br />
-                        <a href="/">Olvidé mi contraseña</a>
+                        <Link to="../Recuperacion_Contrasena">Olvidé mi contraseña</Link>
                     </div>
                 </form>
                 <p className="login__container--register">No tienes ninguna cuenta <a href="./Crear_Cuenta"> Regístrate </a></p>

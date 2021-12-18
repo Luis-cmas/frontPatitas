@@ -31,7 +31,7 @@ function Login({ setUsuario, usuario,setId }) {
                 })
 
         }).catch((err) => {
-            setFail(true)
+          
         })
     };
 

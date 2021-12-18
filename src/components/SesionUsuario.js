@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { connect } from 'react-redux'
 import Axios from 'axios'
 import {Link} from 'react-router-dom'
+
 
 
 function SesionUsuario({ usuario, id }) {
@@ -15,7 +16,7 @@ function SesionUsuario({ usuario, id }) {
                     setData(response.data);
                 })
         })()
-    }, [input])
+    }, [])
 
     return (
         <div className='sesion'>

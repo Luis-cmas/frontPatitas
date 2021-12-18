@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import "./styles/Login.css"
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { setUsuario } from '../actions'
 import Axios from "axios"
@@ -21,7 +21,7 @@ function Login({ setUsuario, usuario,setId }) {
             email: data.email,
             password: data.password,
         }).then((response) => {
-            Axios.get(`http://localhost:3001/usuarioInfo/${data.email}/${data.password}`)
+            Axios.get(`http://localhost:3001/usuarioId/${data.email}/${data.password}`)
                 .then((response) => {
                     console.log(response)
                     setUsuario(response.data[0].Nombre_Usuario);
@@ -31,7 +31,6 @@ function Login({ setUsuario, usuario,setId }) {
                 })
 
         }).catch((err) => {
-            setFail(true)
         })
     };
 

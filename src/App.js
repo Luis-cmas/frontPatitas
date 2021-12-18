@@ -1,7 +1,7 @@
 
 import './App.css';
 
-import Header from './components/header';
+import Header from './components/Header';
 //import Carrusel from './components/carrusel';
 import TiendaHome from './components/TiendaHome';
 import Somos from './components/Somos';

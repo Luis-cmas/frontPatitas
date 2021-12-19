@@ -1,7 +1,7 @@
 
 import './App.css';
 
-import Header from './components/header';
+import Header from './components/Header';
 //import Carrusel from './components/carrusel';
 import TiendaHome from './components/TiendaHome';
 import Somos from './components/Somos';
@@ -11,12 +11,12 @@ import CrearCuenta from './components/CrearCuenta';
 import Tienda from './components/Tienda';
 import SesionUsuario from './components/SesionUsuario';
 import RecuperacionPass from './components/RecuperacionPass';
+import CrearCita from './components/CrearCita';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
-import HeaderTienda from './components/HeaderTienda';
 
 /** para funciones con parametros se pueden poner la etiqueta y en la etiqueta de inicio
  * se agrega el nombre de la variable junto con su valor, siempre entre comillas 
@@ -56,7 +56,10 @@ function App() {
             <Tienda />
           </div>}
           />
-          <Route exact path="/Crear_Cita" element={<Header />}
+          <Route exact path="/Crear_Cita" element={<div>
+            <Header />
+            <CrearCita/>
+            </div>}
           />
           <Route exact path="/Sesion" element={<div>
             <Header />

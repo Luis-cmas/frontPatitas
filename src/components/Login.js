@@ -1,20 +1,22 @@
-import React, { useState } from 'react'
+import React from 'react'
 import "./styles/Login.css"
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { setUsuario } from '../actions'
+import { setUsuario, setEmpleado, setId } from '../actions'
 import Axios from "axios"
 import { useForm } from "react-hook-form"
-import { setId } from '../actions'
+import { Link } from 'react-router-dom'
 //props,en este caso son setUsuario y usuario
 
-function Login({ setUsuario, usuario,setId }) {
+function Login({ setUsuario, usuario, setId, setEmpleado }) {
+
     const history = useNavigate();
     const {
         register,
         handleSubmit,
         formState: { errors }
     } = useForm();
+
     const onSubmit = (data) => {
         Axios.post("http://localhost:3001/usuario", {
             email: data.email,
@@ -22,15 +24,32 @@ function Login({ setUsuario, usuario,setId }) {
         }).then((response) => {
             Axios.get(`http://localhost:3001/usuarioId/${data.email}/${data.password}`)
                 .then((response) => {
-                    console.log(response)
                     setUsuario(response.data[0].Nombre_Usuario);
                     setId(response.data[0].Id_Usuario);
-                    alert(response.data[0].Nombre_Usuario)
+                    alert("Has iniciado sesion como usurio " + response.data[0].Nombre_Usuario)
                     history('/');
+                }).catch((err) => {
+                    Axios.post(`http://localhost:3001/empleados`, {
+                        email: data.email,
+                        password: data.password
+                    })
+                        .then((response) => {
+                            Axios.get(`http://localhost:3001/empleado/${data.email}/${data.password}`)
+                                .then((response) => {
+                                    setUsuario(response.data[0].Nombre_Empleado);
+                                    setId(response.data[0].Id_Empleado);
+                                    setEmpleado(1);
+                                    alert("Has iniciado sesion como empleado " + response.data[0].Nombre_Empleado);
+                                    history('/');
+
+                                }).catch(() => {
+                                    alert("Correo o contraseña incorrecta");
+                                })
+                        })
                 })
 
         }).catch((err) => {
-            
+            alert("Hola catch");
         })
     };
 
@@ -60,7 +79,7 @@ function Login({ setUsuario, usuario,setId }) {
                     <div className='contact__input-group'>
                         <label htmlFor="password">contraseña</label>
                         <input className='input'
-                            type="password"
+                            type="text"
                             {...register("password", {
                                 validate: {
                                     password: (value) => value !== "",
@@ -95,7 +114,8 @@ function Login({ setUsuario, usuario,setId }) {
 //trae la funcion para cambiar el valor de la variable
 const mapDispatchToProps = {
     setUsuario,
-    setId
+    setId,
+    setEmpleado
 }
 //trae las variables globales
 const mapStateToProps = state => {

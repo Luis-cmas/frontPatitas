@@ -71,7 +71,7 @@ body{
     flex-direction: column;
 }
 .login__container--form label{
-    font-size: 14px;
+    /* font-size: 14px; */
 }
 
 .login__container--remember-me{
@@ -145,11 +145,15 @@ body{
 }
 .contact__input-group {
     margin: 1rem;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     /* position: relative; */
+}
+label{
+    font-size: 15px;
 }
 .footer{
     display: flex;

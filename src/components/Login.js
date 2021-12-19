@@ -9,7 +9,6 @@ import { setId } from '../actions'
 //props,en este caso son setUsuario y usuario
 
 function Login({ setUsuario, usuario,setId }) {
-
     const history = useNavigate();
     const {
         register,
@@ -21,7 +20,7 @@ function Login({ setUsuario, usuario,setId }) {
             email: data.email,
             password: data.password,
         }).then((response) => {
-            Axios.get(`http://localhost:3001/usuarioInfo/${data.email}/${data.password}`)
+            Axios.get(`http://localhost:3001/usuarioId/${data.email}/${data.password}`)
                 .then((response) => {
                     console.log(response)
                     setUsuario(response.data[0].Nombre_Usuario);
@@ -31,7 +30,7 @@ function Login({ setUsuario, usuario,setId }) {
                 })
 
         }).catch((err) => {
-          
+            
         })
     };
 

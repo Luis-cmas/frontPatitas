@@ -41,7 +41,7 @@ body {
     border-radius: 30px;
     box-shadow: rgba(255 , 255, 255, 0.3);
     color:var(--morado);
-    padding: 5rem 2rem; 
+    padding: 4rem 2rem; 
     min-height: 400px;
     width: 30%;
     display: flex;
@@ -86,6 +86,11 @@ body {
     margin-bottom: 10px;
     padding: 0px 14px;
     outline: none;
+}
+.verificacionRobot{
+    margin: 10px 0px;
+    font-size: 16px;
+    color: black;
 }
 ::placeholder{
     color: black;

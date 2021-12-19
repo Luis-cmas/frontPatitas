@@ -52,7 +52,7 @@ function App() {
           <Route exact path="/Busqueda" element={<Header />}
           />
           <Route exact path="/Tienda" element={<div>
-            <HeaderTienda />
+            <Header/>
             <Tienda />
           </div>}
           />

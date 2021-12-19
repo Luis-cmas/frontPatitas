@@ -11,6 +11,10 @@ export default function CrearCuenta() {
                         <input class="input" type="email" placeholder="Correo" autoComplete='email'  />
                         <input class="input" type="password" placeholder="Contraseña" />
                         <input class="input" type="password" placeholder="Confirma Contraseña" />
+                        <div className='verificacionRobot'>
+                        <input type='checkbox' /> No soy un robot
+                        </div>
+                        
                         <button class="button"> Registrarse</button>
                     </form>
                     <p class="login__container--inicio"> ¿Ya estas registrado? <Link to="../Inicio_Sesion"> Iniciar Sesión </Link></p>

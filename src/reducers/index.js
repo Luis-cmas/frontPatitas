@@ -39,8 +39,13 @@ const reducer = (state, action) => {
             case "SET_CARRITO":
                 return {
                     ...state,
-                    carrito: [...state, action.payload ],
+                    carrito: [...state.carrito, action.payload ],
                 }
+                // case "SET_SUCURSAL":
+                //     return {
+                //         ...state,
+                //         sucursal: [...state.sucursal, action.payload ],
+                //     }
         default:
             return state;
 

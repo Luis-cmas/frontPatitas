@@ -79,6 +79,7 @@ function Login({ setUsuario, usuario, setId, setEmpleado }) {
                         <span htmlFor="password">Contraseña</span>
                         <input className='input'
                             type="text"
+                            placeholder="ingrese su contraseña"
                             {...register("password", {
                                 validate: {
                                     password: (value) => value !== "",
@@ -100,7 +101,7 @@ function Login({ setUsuario, usuario, setId, setEmpleado }) {
                         <Link to="../Recuperacion_Contrasena">Olvidé mi contraseña</Link>
                     </div>
                 </form>
-                <p className="login__container--register">No tienes ninguna cuenta <a href="./Crear_Cuenta"> Regístrate </a></p>
+                <p className="login__container--register">¿No tienes ninguna cuenta?<a href="./Crear_Cuenta">  ¡Regístrate! </a></p>
             </div>
 
         </div>

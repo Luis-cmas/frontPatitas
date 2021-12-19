@@ -1,5 +1,6 @@
 import React , {useEffect,useState} from 'react'
 import { connect } from 'react-redux'
+import Producto from './Producto'
 import "./styles/Tienda.css"
 import Axios from 'axios'
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,7 +16,7 @@ import 'swiper/swiper.min.css'
 import 'swiper/components/navigation/navigation.min.css'
 import 'swiper/components/pagination/pagination.min.css'
 
-function Tienda(productoId) {
+function Tienda({productoId,setCarrito}) {
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -26,10 +27,6 @@ function Tienda(productoId) {
                 })
         })()
     }, [])
-    const agregarCarrito = ()=>{
-
-    }
-
 
     return (
         <div>
@@ -55,12 +52,8 @@ function Tienda(productoId) {
                 <div className='productos'>
                 {data.map((item) => {
                     return(
-                        <div key={item.Id_Producto} className='producto__card'>
-                            <img src={`http://drive.google.com/uc?export=view&id=${item.Imagen_Produc}`} alt="Mascotas" />
-                            <h3>{item.Nombre_Producto}</h3>
-                            <span>{item.Descripcion}</span>
-                            <button onClick={agregarCarrito} ><i class="uil uil-shopping-cart carrito"> </i>Agregar al carrito</button>
-                        </div>
+                        <Producto key={item.Id_Producto} descripcion={item.Descripcion} imagen={item.Imagen_Produc} nombre={item.Nombre_Producto}/>
+
                     )
                 })}
                     <div>

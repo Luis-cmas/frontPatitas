@@ -1,24 +1,38 @@
-:root{
-    margin: 0;
-    padding: 0;
-}
-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.formulario{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.formulario-item{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-select{
+
+ .formulario {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 90vh;
+} 
+.formular{
+    
+    width: 30%;
+    height: 70%;
+    border: 2px solid #a536df;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+}
+
+
+
+
+select {
+    display: flex;
+    height: 3rem;
+    width: 100%;
+    border-radius: 2rem;
+    background-color: #a536df;
+    margin-top: 10%;
+}
+option {
+  color: aliceblue;
+}
+button {
+  margin-top: 10%;
+  width: 50%;
+  margin-left: 25%;
+  border-radius: 05rem;
+  background-color: #df5836;
 }

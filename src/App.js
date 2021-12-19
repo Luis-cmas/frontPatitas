@@ -53,7 +53,10 @@ function App() {
             <Tienda />
           </div>}
           />
-          <Route exact path="/Crear_Cita" element={<div></div>}
+          <Route exact path="/Crear_Cita" element={<div>
+            <CrearCita/>
+            <Footer/>
+          </div>}
           />
           <Route exact path="/Sesion_usuario" element={<div>
             <SesionUsuario/>

@@ -10,7 +10,9 @@ import Login from './components/Login';
 import CrearCuenta from './components/CrearCuenta';
 import Tienda from './components/Tienda';
 import SesionUsuario from './components/SesionUsuario';
-import SesionEmpleado from './components/SesionEmpleado'
+import SesionEmpleado from './components/SesionEmpleado';
+import RecuperacionPass from './components/RecuperacionPass';
+import CrearCita from './components/CrearCita';
 import {
   BrowserRouter as Router,
   Routes,
@@ -41,7 +43,9 @@ function App() {
             <CrearCuenta />
           </div>}
           />
-          <Route exact path="/Recuperacion_Contraseña" element={ <div></div>}
+          <Route exact path="/Recuperacion_Contrasena" element={<div>
+            <RecuperacionPass/>
+            </div>}
           />
           <Route exact path="/Busqueda" element={<div></div>}
           />
@@ -71,7 +75,7 @@ function App() {
             <SesionUsuario/>
             </div>}
           />
-          
+
         </Routes>
       </>
 

@@ -14,7 +14,8 @@ const initialState = {
     "empleado": "",
     "sucursal": "",
     "cita": "",
-    "producto": ""
+    "producto": "",
+    carrito: []
 }
 const store = createStore(reducer,initialState);
 //es el encargado de crar la aplicacion

@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Axios from 'axios'
 import './styles/Usuario.css'
 
+
 function SesionUsuario({ usuario, id }) {
     const [data, setData] = useState([]);
 

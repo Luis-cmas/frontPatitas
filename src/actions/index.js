@@ -10,3 +10,7 @@ export const setEmpleado = payload =>({
     type : "SET_EMPLEADO",
     payload
 })
+export const setCarrito = payload =>({
+    type : "SET_CARRITO",
+    payload
+})

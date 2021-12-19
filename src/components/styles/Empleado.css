@@ -1,0 +1,12 @@
+.sesion{
+    height: 100vh;
+    display: flex;
+}
+
+.sesion__empleado{
+    padding: 2rem;
+}
+
+.sesion__informacion{
+    padding: 2rem;
+}

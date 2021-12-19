@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import "./styles/Header.css" 
 import { connect } from 'react-redux'
 //ver  Redux
-function Header({usuario}) {
+function Header({usuario,empleado,carrito}) {
     /* const useref*/
     useEffect(()=>{
 
@@ -23,7 +23,15 @@ function Header({usuario}) {
         <div class="divTitulos">
             <Link to="/Crear_Cita">Agendar cita</Link>
             <Link to="/Tienda">tienda</Link>
-            <Link to={usuario?"/Sesion":"/Inicio_Sesion"}>{usuario?usuario: "Iniciar Sesion"}</Link>
+            {empleado ? 
+                <Link to='/Sesion_empleado'>{empleado}</Link>
+                :
+                <Link to={usuario?"/Sesion_usuario":"/Inicio_Sesion"}>{usuario?usuario: "Iniciar Sesion"}</Link>
+            }
+            <Link to={'/'}>
+                <i class="uil uil-shopping-cart-alt"></i>
+                <span>{carrito?.length}</span>
+            </Link>
         </div>
     </header>
         </div>
@@ -35,6 +43,8 @@ function Header({usuario}) {
 const mapStateToProps = state => {
     return {
         usuario: state.usuario,
+        empleado: state.empleado,
+        carrito: state.carrito
     }
 }
 

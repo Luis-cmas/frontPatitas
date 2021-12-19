@@ -35,9 +35,8 @@ function Login({ setUsuario, usuario, setId, setEmpleado }) {
                         .then((response) => {
                             Axios.get(`http://localhost:3001/empleado/${data.email}/${data.password}`)
                                 .then((response) => {
-                                    setUsuario(response.data[0].Nombre_Empleado);
+                                    setEmpleado(response.data[0].Nombre_Empleado);
                                     setId(response.data[0].Id_Empleado);
-                                    setEmpleado(1);
                                     alert("Has iniciado sesion como empleado " + response.data[0].Nombre_Empleado);
                                     history('/');
 
@@ -61,7 +60,7 @@ function Login({ setUsuario, usuario, setId, setEmpleado }) {
 
                 <form onSubmit={handleSubmit(onSubmit)} className='login__container--form'>
                     <div className='contact__input-group'>
-                        <label htmlFor="email">Correo</label>
+                        <span htmlFor="email">Correo</span>
                         <input className='input'
                             type='email'
                             placeholder="ingrese su email"
@@ -76,7 +75,7 @@ function Login({ setUsuario, usuario, setId, setEmpleado }) {
                     </div>
 
                     <div className='contact__input-group'>
-                        <label htmlFor="password">contraseña</label>
+                        <span htmlFor="password">Contraseña</span>
                         <input className='input'
                             type="text"
                             {...register("password", {

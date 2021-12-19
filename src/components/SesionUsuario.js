@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import Axios from 'axios'
-
+import './styles/Usuario.css'
 
 function SesionUsuario({ usuario, id }) {
-
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -19,7 +18,7 @@ function SesionUsuario({ usuario, id }) {
     return (
         <div className='sesion'>
             <div className='sesion__usuario'>
-                <img src="/img/perro.png" alt=" Imagen de Usuario" />
+                <img src="/img/perro.png" alt=" Imagen de Usuario" className='sesion__imagen' />
                 <ul>
                     <li>Informacion de Usuario</li>
                     <li>Mascotas</li>

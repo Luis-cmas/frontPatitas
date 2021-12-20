@@ -32,24 +32,6 @@ function Tienda({productoId,setCarrito}) {
     return (
         <div>
             <div>
-
-                {/* <div>
-                    <p><h1>Ofertas</h1></p>
-                    <Swiper spaceBetween={30} centeredSlides={true} autoplay={{
-                        "delay": 2500,
-                        "disableOnInteraction": false
-                    }} pagination={{
-                        "clickable": true
-                    }} navigation={false} className="mySwiper col-7 ">
-                        <SwiperSlide><img src='./img/collagehome3.png' alt='imagenes collage'></img></SwiperSlide>
-                        <SwiperSlide><img src='./img/collagehome4.png' alt='imagenes collage'></img></SwiperSlide>
-                        <SwiperSlide><img src='./img/collagehome8.png' alt='imagenes collage'></img></SwiperSlide>
-                        <SwiperSlide><img src='./img/collagehome9.png' alt='imagenes collage'></img></SwiperSlide>
-                        <SwiperSlide><img src='./img/collagehome10.png' alt='imagenes collage'></img></SwiperSlide>
-
-                    </Swiper>
-
-                </div> */}
                 <div className='productos'>
                 {data.map((item) => {
                     return(

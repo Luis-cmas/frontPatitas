@@ -18,23 +18,24 @@ function SesionEmpleado({ id, empleado }) {
         })()
     }, [id])
 
+
     return (
         <div className='sesion'>
             {console.log(data)}
             <div className='sesion__empleado'>
                 <img src="/img/perro.png" alt=" Imagen de Empleado" className='sesion__imagen' />
                 <ul className='sesion__lista'>
-                    <li className='sesion__lista-item'><Link to="/Sesion_empleado"> Informacion de {empleado}</Link></li>
-                    <li className='sesion__lista-item'>Inventario</li>
-                    <li className='sesion__lista-item'>Agregar Productos</li>
-                    <li className='sesion__lista-item'>Eliminar Productos</li>
-                    <li className='sesion__lista-item'>Empleados</li>
-                    <li className='sesion__lista-item'>Agregar Empleado</li>
-                    <li className='sesion__lista-item'>Eliminar Empleado</li>
+                <Link to="/Sesion_empleado"><li className='sesion__lista-item'> Informacion de {empleado}</li></Link>
+                <Link to="/Sesion_empleado/Inventario"><li className='sesion__lista-item'>Inventario</li></Link>
+                <Link to="/Sesion_empleado/AgregarProductos"><li className='sesion__lista-item'>Agregar Productos</li></Link>
+                <Link to="/Sesion_empleado/QuitarProductos"><li className='sesion__lista-item'>Eliminar Productos</li></Link>
+                <Link to="/Sesion_empleado/VerEmpleados"><li className='sesion__lista-item'>Empleados</li></Link>
+                <Link to="/Sesion_empleado/AgregarEmpleados"><li className='sesion__lista-item'>Agregar Empleado</li></Link>
+                <Link to="/Sesion_empleado/EliminarEmpleados"><li className='sesion__lista-item'>Eliminar Empleado</li></Link>
 
                 </ul>
             </div>
-            {   
+            {/* {   
                 
                 user && (
                     <div className='sesion__informacion'>
@@ -53,7 +54,7 @@ function SesionEmpleado({ id, empleado }) {
                         })}
                     </div>
                 )
-            }
+            } */}
         </div>
     )
 }

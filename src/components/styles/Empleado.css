@@ -5,6 +5,7 @@
     justify-content: left;
     width: 30vw;
     border-right: 3px solid rgb(228, 79, 241);
+    
 }
 
 .sesion__empleado{
@@ -12,6 +13,7 @@
 }
 
 .sesion__informacion{
+    
     padding: 2rem;
 }
 .sesion__lista{
@@ -31,10 +33,13 @@
     border-top: 2px solid rgb(86, 86, 230);
     margin-top: 2rem;
 }
-.sesion__lista-item Link{
+.sesion__lista-item a{
     text-decoration: none;
+    color: black;
 }
+
 .sesion__lista :hover{
     background-color: rgb(47, 47, 216);
     color: aliceblue;
+    border-radius: 4px;
 }

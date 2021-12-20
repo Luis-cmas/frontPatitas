@@ -13,6 +13,12 @@ import SesionUsuario from './components/SesionUsuario';
 import SesionEmpleado from './components/SesionEmpleado';
 import RecuperacionPass from './components/RecuperacionPass';
 import CrearCita from './components/CrearCita';
+import AgregarEmpleado from './components/AgregarEmpleado';
+import Inventario from './components/Inventario';
+import VerEmpleados from './components/VerEmpleados';
+import QuitarProductos from './components/QuitarProductos';
+import EliminarEmpleados from './components/EliminarEmpleados';
+import AgregarProductos from './components/AgregarProductos';
 
 import {
   BrowserRouter as Router,
@@ -71,7 +77,43 @@ function App() {
             <Footer/>
             </div>}
           />
-          <Route exact path="/Admin" element={<div>
+          <Route exact path="/Sesion_empleado/Inventario" element={<div>
+            <SesionEmpleado />
+            <Inventario/>
+            <Footer/>
+            </div>}
+          />
+          <Route exact path="/Sesion_empleado/AgregarProductos" element={<div>
+            <SesionEmpleado />
+            <AgregarProductos/>
+            <Footer/>
+            </div>}
+          />
+          <Route exact path="/Sesion_empleado/QuitarProductos" element={<div>
+            <SesionEmpleado />
+            <QuitarProductos/>
+            <Footer/>
+            </div>}
+          />
+          <Route exact path="/Sesion_empleado/VerEmpleados" element={<div>
+            <SesionEmpleado />
+            <VerEmpleados/>
+            <Footer/>
+            </div>}
+          />
+          <Route exact path="/Sesion_empleado/AgregarEmpleados" element={<div>
+            <SesionEmpleado />
+            <AgregarEmpleado/>
+            <Footer/>
+            </div>}
+          />
+          <Route exact path="/Sesion_empleado/EliminarEmpleados" element={<div>
+            <SesionEmpleado />
+            <EliminarEmpleados/>
+            <Footer/>
+            </div>}
+          />
+          {/* <Route exact path="/Admin" element={<div>
             <SesionUsuario/>
             </div>}
           />
@@ -81,8 +123,8 @@ function App() {
           />
           <Route exact path="/Admin/productos" element={<div>
             <SesionUsuario/>
-            </div>}
-          />
+            </div>} 
+          />*/}
 
         </Routes>
       </>

@@ -3,14 +3,15 @@ import Axios from 'axios'
 import "./styles/CrearCita.css"
 
 export default function CrearCita() {
-    let sucursal=""
     const [data, setData] = useState([])
+    const [option, setOption] = useState("");
     const [data2,setData2] = useState([])
     const [data3,setData3] = useState([])
-    // veterinarios(){
-    //     sucursal = document.getElementById("sucursales").value;
+    
+    const handleChange = (event) => {
+        setOption(event.target.value);
+    }
 
-    // }
 
     useEffect(() => {/**traemos la info de una url, ver promesas xd */
         (async() => {//funcion asincrona,usehooks
@@ -18,7 +19,7 @@ export default function CrearCita() {
             .then((response) => {//una vez los tiene guarda los datos en la "variable" data
                 setData(response.data);
             })
-            await Axios.get(`https://backend-patitas.herokuapp.com/sucursal/${sucursal}`)//espera a que traiga todos los datos de la url
+            await Axios.get(`https://backend-patitas.herokuapp.com/empleado/sucursal/${option}`)//espera a que traiga todos los datos de la url
             .then((response) => {//una vez los tiene guarda los datos en la "variable" data
                 setData2(response.data);
             })
@@ -27,15 +28,15 @@ export default function CrearCita() {
                 setData(response.data);
             })
         })()
-    console.log(data)
-},[])
+    },[option])
+
     return (
         <div className='formulario'>
             <form className='formular'>
                 
                     <p>Genere su cita</p>
                     <div className='formulario-item'>
-                        <select >
+                        <select onChange={handleChange} >
                             <option defaultValue="default" defaultChecked="default" id="sucursales" >seleccione una sucursal</option>
                             {data.map((a) =><option> {a.Nombre_Sucursal}</option>)}
                         </select>
@@ -43,6 +44,7 @@ export default function CrearCita() {
                     <div className='formulario-item'>
                         <select>
                             <option defaultValue="default" defaultChecked="default"  >seleccione su veterinario</option>
+                            {data2.map((a) =><option> {a.Nombre_Sucursal}</option>)}
                         </select>
                     </div>
                     <div className='formulario-item'>

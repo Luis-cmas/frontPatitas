@@ -1,0 +1,20 @@
+.informacion{
+    display: flex;
+    height: 100vh;
+
+    /* align-items: center; */
+    justify-content:left;
+    /* margin-left: 30%; */
+    align-items:center;
+    font-size: 16px;
+    
+    background-color: rgb(51, 50, 50);
+    color: rgb(220, 222, 223);
+}
+.informacion_lista{
+    display: flexbox;
+    
+}
+.informacion_lista-item{
+    margin-top: 50px;
+}

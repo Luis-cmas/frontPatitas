@@ -13,11 +13,13 @@ import SesionUsuario from './components/SesionUsuario';
 import SesionEmpleado from './components/SesionEmpleado';
 import RecuperacionPass from './components/RecuperacionPass';
 import CrearCita from './components/CrearCita';
+
 import {
   BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
+import InfoEmpleado from './components/InfoEmpleado';
 
 /** para funciones con parametros se pueden poner la etiqueta y en la etiqueta de inicio
  * se agrega el nombre de la variable junto con su valor, siempre entre comillas 
@@ -50,7 +52,8 @@ function App() {
           <Route exact path="/Busqueda" element={<div></div>}
           />
           <Route exact path="/Tienda" element={<div>
-            <Tienda />
+            <TiendaHome/>
+            <Tienda/>
           </div>}
           />
           <Route exact path="/Crear_Cita" element={<div>
@@ -63,7 +66,9 @@ function App() {
             </div>}
           />
           <Route exact path="/Sesion_empleado" element={<div>
-            <SesionEmpleado/>
+            <SesionEmpleado />
+            <InfoEmpleado/>
+            <Footer/>
             </div>}
           />
           <Route exact path="/Admin" element={<div>

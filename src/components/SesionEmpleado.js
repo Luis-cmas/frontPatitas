@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import Axios from 'axios'
 import './styles/Empleado.css'
+import { Link } from 'react-router-dom';
 
 function SesionEmpleado({ id, empleado }) {
     const [data, setData] = useState([]);
@@ -10,7 +11,7 @@ function SesionEmpleado({ id, empleado }) {
 
     useEffect(() => {
         (async () => {
-            Axios.get(`http://localhost:3001/empleado/${id}`)
+            Axios.get(`https://backend-patitas.herokuapp.com/empleado/${id}`)
                 .then((response) => {
                     setData(response.data);
                 })
@@ -22,14 +23,15 @@ function SesionEmpleado({ id, empleado }) {
             {console.log(data)}
             <div className='sesion__empleado'>
                 <img src="/img/perro.png" alt=" Imagen de Empleado" className='sesion__imagen' />
-                <ul>
-                    <li>Informacion de {empleado}</li>
-                    <li>Inventario</li>
-                    <li>Agregar Productos</li>
-                    <li>Eliminar Productos</li>
-                    <li>Empleados</li>
-                    <li>Agregar Empleado</li>
-                    <li>Eliminar Empleado</li>
+                <ul className='sesion__lista'>
+                    <li className='sesion__lista-item'><Link to="/Sesion_empleado"> Informacion de {empleado}</Link></li>
+                    <li className='sesion__lista-item'>Inventario</li>
+                    <li className='sesion__lista-item'>Agregar Productos</li>
+                    <li className='sesion__lista-item'>Eliminar Productos</li>
+                    <li className='sesion__lista-item'>Empleados</li>
+                    <li className='sesion__lista-item'>Agregar Empleado</li>
+                    <li className='sesion__lista-item'>Eliminar Empleado</li>
+
                 </ul>
             </div>
             {   

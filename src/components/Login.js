@@ -18,23 +18,24 @@ function Login({ setUsuario, usuario, setId, setEmpleado }) {
     } = useForm();
 
     const onSubmit = (data) => {
-        Axios.post("http://localhost:3001/usuario", {
+        Axios.post("https://backend-patitas.herokuapp.com/usuario", {
             email: data.email,
             password: data.password,
         }).then((response) => {
-            Axios.get(`http://localhost:3001/usuarioId/${data.email}/${data.password}`)
+            //http://localhost:3001/
+            Axios.get(`https://backend-patitas.herokuapp.com/usuarioId/${data.email}/${data.password}`)
                 .then((response) => {
                     setUsuario(response.data[0].Nombre_Usuario);
                     setId(response.data[0].Id_Usuario);
                     alert("Has iniciado sesion como usurio " + response.data[0].Nombre_Usuario)
                     history('/');
                 }).catch((err) => {
-                    Axios.post(`http://localhost:3001/empleados`, {
+                    Axios.post(`https://backend-patitas.herokuapp.com/empleados`, {
                         email: data.email,
                         password: data.password
                     })
                         .then((response) => {
-                            Axios.get(`http://localhost:3001/empleado/${data.email}/${data.password}`)
+                            Axios.get(`https://backend-patitas.herokuapp.com/empleado/${data.email}/${data.password}`)
                                 .then((response) => {
                                     setEmpleado(response.data[0].Nombre_Empleado);
                                     setId(response.data[0].Id_Empleado);

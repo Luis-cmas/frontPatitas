@@ -21,7 +21,8 @@ function Tienda({productoId,setCarrito}) {
 
     useEffect(() => {
         (async () => {
-            Axios.get(`http://localhost:3001/producto`)
+            //cambiar por https://backend-patitas.herokuapp.com/producto una vez lo suban en github
+            Axios.get(`https://backend-patitas.herokuapp.com/producto`)
                 .then((response) => {
                     setData(response.data);
                 })
@@ -32,7 +33,7 @@ function Tienda({productoId,setCarrito}) {
         <div>
             <div>
 
-                <div>
+                {/* <div>
                     <p><h1>Ofertas</h1></p>
                     <Swiper spaceBetween={30} centeredSlides={true} autoplay={{
                         "delay": 2500,
@@ -48,7 +49,7 @@ function Tienda({productoId,setCarrito}) {
 
                     </Swiper>
 
-                </div>
+                </div> */}
                 <div className='productos'>
                 {data.map((item) => {
                     return(

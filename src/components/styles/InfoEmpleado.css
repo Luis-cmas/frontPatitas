@@ -13,8 +13,12 @@
 }
 .informacion_lista{
     display: flexbox;
+    font: 25px bolds;
+    list-style: none;
+    padding-left: 2rem;
     
 }
 .informacion_lista-item{
     margin-top: 50px;
+    color: rgb(220, 222, 223);
 }

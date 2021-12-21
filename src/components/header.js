@@ -13,7 +13,7 @@ function Header({usuario,empleado,carrito}) {
             <header className="header">
                 
                     <div>
-                        <Link to={"/"}><img tabindex="0" className="header__img" src="./img/Loguito.png" alt="Logo"/></Link>
+                        <Link to={"/"}><img tabindex="0" className="header__img" src="/img/Loguito.png" alt="Logo"/></Link>
                     </div>
                 
                     <div className="divContainer">

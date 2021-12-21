@@ -30,7 +30,7 @@ export default function CrearCita() {
                 .then((response) => {//una vez los tiene guarda los datos en la "variable" data
                     setData(response.data);
                 })
-            await Axios.get(`http://localhost:3001/search?nombre=${option}`)//espera a que traiga todos los datos de la url
+            await Axios.get(`https://backend-patitas.herokuapp.com/search?nombre=${option}`)//espera a que traiga todos los datos de la url
                 .then((response) => {//una vez los tiene guarda los datos en la "variable" data
                     setData2(response.data);
                 })
@@ -38,7 +38,7 @@ export default function CrearCita() {
     }, [option])
 
     useEffect(() => {
-        Axios.get(`http://localhost:3001/horario?empleado=${option2}`)//espera a que traiga todos los datos de la url
+        Axios.get(`https://backend-patitas.herokuapp.com/horario?empleado=${option2}`)//espera a que traiga todos los datos de la url
             .then((response) => {//una vez los tiene guarda los datos en la "variable" data
                 setData3(response.data);
             })

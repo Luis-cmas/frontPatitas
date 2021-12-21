@@ -15,7 +15,9 @@ export default function AgregarEmpleado() {
                 <li className='formEmpleado__item'><p>Contraseña</p><input type="password"></input></li>
                 <li className='formEmpleado__item'><p>Horario de entrada</p><input type="time"></input></li>
                 <li className='formEmpleado__item'><p>Horario de salida</p><input type="time"></input></li>
+                <button type='submit' className='agregar'>Agregar empleado</button>
             </ul>
+            
         </div>
     )
 }

@@ -1,0 +1,35 @@
+.AgregarEmpleado{
+    display: flex;
+    height: 100vh;
+
+    /* align-items: center; */
+    justify-content:left;
+    /* margin-left: 30%; */
+    align-items:center;
+    font-size: 16px;
+    
+    background-color: rgb(51, 50, 50);
+    color: rgb(220, 222, 223);
+}
+.AgregarEmpleado p{
+    
+    display: block;
+}
+.formEmpleado{
+    width: 100%;
+    height: 90%;
+    justify-content: left;
+    list-style: none;
+}
+.formEmpleado__item{
+    display: flex;
+    margin-top: 1rem;
+    /* margin-left: 1rem; */
+}
+.formEmpleado__item p{
+    width: 20%;
+    margin:0.5rem 1rem;
+}
+.formEmpleado__item p{
+    
+}

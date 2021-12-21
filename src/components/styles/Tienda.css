@@ -9,6 +9,11 @@
 .productos span{
     min-height: 50px;
 }
+.productos p{
+    margin: 0;
+    font-weight: 700;
+}
+
 .productos button{
     background-color: rgb(233, 218, 15);
     cursor: pointer;

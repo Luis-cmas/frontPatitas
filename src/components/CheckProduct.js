@@ -1,9 +1,11 @@
 import React from 'react';
 import './styles/CheckProduct.css';
+import {connect} from 'react-redux'
+import {removeCarrito} from '../actions'
 
-function CheckProduct({id, title, image, price, description}) {
+function CheckProduct({id, title, image, price, description,removeCarrito}) {
     const removeFromBasket = () => {
-        
+        removeCarrito({id})
     };
 
     return (
@@ -24,10 +26,20 @@ function CheckProduct({id, title, image, price, description}) {
                             <p>⭐</p>
                         ))}
                 </div> */}
-                <button onClick={removeFromBasket}>Remove from basket</button>
+                <button onClick={removeFromBasket} className='checkoutProduct__button'>Remove from basket</button>
             </div>
         </div>
     );
 }
 
-export default CheckProduct;
+const mapDispatchToProps = {
+    removeCarrito
+}
+//trae las variables globales
+const mapStateToProps = state => {
+    return {
+        usuario: state.usuario,
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CheckProduct)

@@ -2,13 +2,14 @@ import React from 'react'
 import { setCarrito } from '../actions'
 import { connect } from 'react-redux'
 
-function Producto({key,setCarrito,imagen,nombre,descripcion}) {
+function Producto({key,setCarrito,imagen,nombre,descripcion, precio}) {
     const agregarCarrito = ()=>{
         setCarrito({
             id : key,
             imagen : imagen,
             nombre : nombre,
-            descripcion : descripcion
+            descripcion : descripcion,
+            precio: precio 
         })
     }
     return (
@@ -16,6 +17,7 @@ function Producto({key,setCarrito,imagen,nombre,descripcion}) {
         <div key={key} className='producto__card'>
             <img src={`http://drive.google.com/uc?export=view&id=${imagen}`} alt="Mascotas" />
             <h3>{nombre}</h3>
+            <p>$ {precio}</p>
             <span>{descripcion}</span>
             <button onClick={agregarCarrito} ><i class="uil uil-shopping-cart carrito"> </i>Agregar al carrito</button>
         </div>

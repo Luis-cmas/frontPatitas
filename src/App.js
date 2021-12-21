@@ -19,6 +19,7 @@ import VerEmpleados from './components/VerEmpleados';
 import QuitarProductos from './components/QuitarProductos';
 import EliminarEmpleados from './components/EliminarEmpleados';
 import AgregarProductos from './components/AgregarProductos';
+import Checkout from './components/Checkout';
 
 import {
   BrowserRouter as Router,
@@ -110,6 +111,11 @@ function App() {
           <Route exact path="/Sesion_empleado/EliminarEmpleados" element={<div>
             <SesionEmpleado />
             <EliminarEmpleados/>
+            <Footer/>
+            </div>}
+          />
+          <Route exact path="/carrito" element={<div>
+            <Checkout/>
             <Footer/>
             </div>}
           />

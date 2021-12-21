@@ -30,7 +30,7 @@ function Header({usuario,empleado,carrito}) {
                         :
                         <Link to={usuario?"/Sesion_usuario":"/Inicio_Sesion"}>{usuario?usuario: "Iniciar Sesion"}</Link>
                     }
-                    <Link to={'/'} className='header__canasta'>
+                    <Link to={'/carrito'} className='header__canasta'>
                         <i className="uil uil-shopping-cart-alt canasta__icon"></i>
                         <span>{carrito?.length}</span>
                     </Link>

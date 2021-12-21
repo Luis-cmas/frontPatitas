@@ -4,13 +4,11 @@ import { connect } from 'react-redux'
 
 function Producto({key,setCarrito,imagen,nombre,descripcion}) {
     const agregarCarrito = ()=>{
-        setCarrito({item :{
+        setCarrito({
             id : key,
             imagen : imagen,
             nombre : nombre,
             descripcion : descripcion
-        }
-            
         })
     }
     return (

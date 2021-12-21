@@ -2,7 +2,7 @@ import React from 'react'
 import './styles/Checkout.css'
 import { connect } from 'react-redux';
 import CheckProduct from './CheckProduct';
-// import Subtotal from './Subtotal.js'
+import Subtotal from './Subtotal.js'
 
 function Checkout({carrito}) {
     return (
@@ -30,7 +30,7 @@ function Checkout({carrito}) {
                                         id={item.id}
                                         title={item.nombre}
                                         image={item.imagen}
-                                        price={"1,200"}
+                                        price={item.precio}
                                         description={item.descripcion}
                                     />
                                 ))}
@@ -39,11 +39,11 @@ function Checkout({carrito}) {
                 }
             </div>
             
-            {/* {carrito.length > 0 && (
+            {carrito.length > 0 && (
                 <div className="checkout__right">
                     <Subtotal></Subtotal>
                 </div>
-            )} */}
+            )}
         </div>
     );
 }

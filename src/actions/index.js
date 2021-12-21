@@ -14,3 +14,7 @@ export const setCarrito = payload =>({
     type : "SET_CARRITO",
     payload
 })
+export const removeCarrito = payload =>({
+    type : "REMOVE_FROM_BASKET",
+    payload
+})

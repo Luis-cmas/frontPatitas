@@ -35,7 +35,7 @@ function Tienda({productoId,setCarrito}) {
                 <div className='productos'>
                 {data.map((item) => {
                     return(
-                        <Producto key={item.Id_Producto} descripcion={item.Descripcion} imagen={item.Imagen_Produc} nombre={item.Nombre_Producto}/>
+                        <Producto key={item.Id_Producto} descripcion={item.Descripcion} imagen={item.Imagen_Produc} nombre={item.Nombre_Producto} precio={item.precio}/>
 
                     )
                 })}

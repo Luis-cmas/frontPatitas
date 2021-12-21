@@ -1,8 +1,8 @@
 import React from 'react'
-import './Subtotal.css'
+import './styles/Subtotal.css'
 import { connect } from 'react-redux';
 import CurrencyFormat from 'react-currency-format';
-import { getBasketTotal } from './reducer';
+import { getBasketTotal } from '../reducers';
 
 function Subtotal({carrito}) {
 
@@ -26,7 +26,7 @@ function Subtotal({carrito}) {
                 thousandSeparator={true}
                 prefix={"$"}
             />
-            <button>Proceed to Checkout</button>
+            <button>Proceder al pago</button>
 
         </div>
     )
@@ -35,7 +35,7 @@ function Subtotal({carrito}) {
 //trae las variables globales
 const mapStateToProps = state => {
     return {
-        carrito: state.usuario,
+        carrito: state.carrito,
     }
 }
 

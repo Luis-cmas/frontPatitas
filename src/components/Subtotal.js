@@ -5,7 +5,9 @@ import CurrencyFormat from 'react-currency-format';
 import { getBasketTotal } from '../reducers';
 
 function Subtotal({carrito}) {
-
+const pago=()=>{
+    alert("su compra ha sido realizada")
+}
     return (
         <div className='subtotal'>
             {/* Price */}
@@ -26,7 +28,7 @@ function Subtotal({carrito}) {
                 thousandSeparator={true}
                 prefix={"$"}
             />
-            <button>Proceder al pago</button>
+            <button onClick={pago}>Proceder al pago</button>
 
         </div>
     )

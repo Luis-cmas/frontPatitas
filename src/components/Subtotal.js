@@ -3,11 +3,13 @@ import './styles/Subtotal.css'
 import { connect } from 'react-redux';
 import CurrencyFormat from 'react-currency-format';
 import { getBasketTotal } from '../reducers';
+import {emptyCarrito} from '../actions'
 
-function Subtotal({carrito}) {
-const pago=()=>{
-    alert("su compra ha sido realizada")
-}
+function Subtotal({carrito, emptyCarrito}) {
+    const pago = () => {
+        alert("SU PAGO HA SIDO REALIZADO");
+        emptyCarrito();
+    }
     return (
         <div className='subtotal'>
             {/* Price */}
@@ -33,7 +35,7 @@ const pago=()=>{
         </div>
     )
 }
-
+//trae las variables globales
 //trae las variables globales
 const mapStateToProps = state => {
     return {
@@ -41,4 +43,8 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(Subtotal)
+const mapDispatchToProps = {
+    emptyCarrito
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Subtotal)

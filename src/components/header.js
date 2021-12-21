@@ -10,32 +10,32 @@ function Header({usuario,empleado,carrito}) {
 
     })
     return (
-        <div className='cabecera'>
-            <header class="header">
-            <div>
-                <Link to={"/"}><img tabindex="0" class="header__img" src="./img/Loguito.png" alt="Logo"/></Link>
-            </div>
-        
-        <div class="divContainer">
-            <input class="inputBuscar" type="text" placeholder="Buscar"/>
-            <Link to={"/Busqueda"} class="search-icon" style={{backgroundImage: "url(/img/lupa.png)"}}></Link>
-        </div>
-        <div class="divTitulos">
-            <Link to="/Crear_Cita">Agendar cita</Link>
-            <Link to="/Tienda">tienda</Link>
-            {empleado ? 
-                <Link to='/Sesion_empleado'>{empleado}</Link>
-                :
-                <Link to={usuario?"/Sesion_usuario":"/Inicio_Sesion"}>{usuario?usuario: "Iniciar Sesion"}</Link>
-            }
-            <Link to={'/'}>
-                <i class="uil uil-shopping-cart-alt"></i>
-                <span>{carrito?.length}</span>
-            </Link>
-        </div>
-    </header>
-        </div>
-        
+            <header className="header">
+                
+                    <div>
+                        <Link to={"/"}><img tabindex="0" className="header__img" src="./img/Loguito.png" alt="Logo"/></Link>
+                    </div>
+                
+                    <div className="divContainer">
+                        <input className="inputBuscar" type="text" placeholder="Buscar"/>
+                        <i className="uil uil-search search-icon"/>
+                    </div>
+                
+                
+                <div className="divTitulos">
+                    <Link to="/Crear_Cita">Agendar cita</Link>
+                    <Link to="/Tienda">Tienda</Link>
+                    {empleado ? 
+                        <Link to='/Sesion_empleado'>{empleado}</Link>
+                        :
+                        <Link to={usuario?"/Sesion_usuario":"/Inicio_Sesion"}>{usuario?usuario: "Iniciar Sesion"}</Link>
+                    }
+                    <Link to={'/carrito'} className='header__canasta'>
+                        <i className="uil uil-shopping-cart-alt canasta__icon"></i>
+                        <span>{carrito?.length}</span>
+                    </Link>
+                </div>
+            </header>
     )
 }
 

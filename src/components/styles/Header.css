@@ -4,81 +4,66 @@
     --verde2: #36DFA5;
     --naranja: #F56E40;
 }
-/* .cabecera{
-    display: flex;
-    justify-content:space-around;
-} */
-.header {
+
+header {
     background-color: var(--morado);
-    width: 100%;
-    height: 15vh;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    border-bottom: rgba(255 , 255, 255, 0.3);
+    padding-right: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 100
 }
 
 .header__img{
     width: 300px;
-    margin-left: 1vh;
+    margin: 0 1vh;
 }
+
 .divContainer{
-    /* width: 650px;
-    height: 50px; */
-    width: 40vw;
-    height: auto;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap;
-    background-color: white;
-    border-radius: 8px;
-    border-left: 2px solid var(--morado);
-    border-top: 2px solid var(--morado);
-    border-right: 2px solid var(--morado);
-    border-bottom: 2px solid var(--morado);
+    flex: 1;
+    align-content: center;
 }
+
 .inputBuscar{
-    /* width: 500px; */
-    height: 40px;
-    background-color: white;
-    font-size: 16px;
-    font-family: 'Muli', sans-serif;
-    padding: 0px 14px;
-    outline: none;
+    padding: 15px;
+    width: 100%;
     border: none;
 }
 
 .search-icon{
-    /* background: url("../img/lupa.png"); */
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    width: 25px;
-    height: 25px;
-    margin-right: 5px;
+    background-color: white;
+    font-size: 1.3rem;
+    padding: 10px;
+    cursor: pointer;
 }
+
 .divTitulos{
     /* width: 350px; */
     display: flex;
-    flex-wrap: wrap;
-    
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 .divTitulos a{
     font-size: 16px;
     font-family: 'Muli', sans-serif;
-    /* margin-right: 12px; */
-    margin-left: 3rem;
-    padding: 10px 10px;
+    margin: 0 10px;
+    padding: 10px;
     color: white;
     text-decoration: none;
 }
 .divTitulos a:hover{
     background-color: #8f05da;
     border-radius: 5px;
+}
+
+.header__canasta{
+    display: flex;
+    align-items: center;
+}
+
+.canasta__icon{
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
 }

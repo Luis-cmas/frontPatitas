@@ -18,3 +18,7 @@ export const removeCarrito = payload =>({
     type : "REMOVE_FROM_BASKET",
     payload
 })
+export const emptyCarrito = payload =>({
+    type : "EMPTY_BASKET",
+    payload
+})

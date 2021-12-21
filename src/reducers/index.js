@@ -62,6 +62,10 @@ const reducer = (state, action) => {
             }
 
             return { ...state, carrito: newBasket };
+
+        case 'EMPTY_BASKET':
+            return { ...state, carrito: [] };
+
         default:
             return state;
 
